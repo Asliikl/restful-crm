@@ -9,10 +9,11 @@ Route::get('/', function () {
    return 'Hoşgeldiniz!';
 });
 
-//Postman test için örnek CSRF token alıyoruz.
-Route::get('/get-token', function () {
-    return view('token');
+//Postman CSRF token alıyoruz.
+Route::get('/csrf-token', function () {
+    return response()->json(['token' => csrf_token()]);
 });
+
 
 Route::prefix('api')->group(function () {
     //Employees
