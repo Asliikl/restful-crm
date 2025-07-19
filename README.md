@@ -1,15 +1,13 @@
 # TASK API
 
 **Amaç** :
-Bu proje, bir çalışan ve görev yönetim sistemi geliştirmeyi amaçlamaktadır. Sistem, aşağıdaki temel işlevleri sağlar:
+Bu proje, çalışan ve görev yönetim sistemi geliştirmeyi amaçlamaktadır. Sistem, aşağıdaki işlevleri sağlar:
 
 - Çalışan bilgilerini oluşturma, görüntüleme, güncelleme ve silme  
 - Çalışanlara görev atama  
 - Görevleri listeleme, güncelleme ve silme  
 - Görevleri tamamlandı olarak işaretleme  
 - Çalışan bazlı görev listesini görüntüleme  
-
-Bu API, çalışan ve görev süreçlerinin basit ve etkili şekilde yönetilmesini sağlar.
 
 
 **Endpointler ve açıklamaları**
@@ -144,5 +142,5 @@ Content-Type: application/json
 |---------------|----------------------|--------------------|
 | Accept        | application/json     |- |
 | Content-Type  | application/json     |- |
-| Content-Type  | application/json     | POST,PUT, PATCH isteklerinde |
+| X-CSRF-TOKEN  |      'Token'         | POST,PUT, PATCH isteklerinde |
 

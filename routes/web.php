@@ -3,18 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\TaskController;
-use App\Models\Task;
 
-/* Basic resource routes
-Route::prefix('api')->group(function () {
-    Route::resource('tasks', TaskController::class); 
-    Route::resource('employees', EmployeeController::class);
-    Route::patch('/tasks/{id}/complete', [TaskController::class, 'markComplete']); // Belirli bir görevi tamamlandı olarak işaretleme
-    Route::get('/employees/{id}/tasks', [EmployeeController::class, 'getTasks']);  // Belirli bir çalışana ait görevleri listeleme
-});
-*/
+
 Route::get('/', function () {
    return 'Hoşgeldiniz!';
+});
+
+//Postman test için örnek CSRF token alıyoruz.
+Route::get('/get-token', function () {
+    return view('token');
 });
 
 Route::prefix('api')->group(function () {
@@ -37,7 +34,4 @@ Route::prefix('api')->group(function () {
     Route::patch('/tasks/{id}/complete', [TaskController::class, 'markComplete']);
 });
 
-Route::get('/get-token', function () {
-    return view('token');
-});
-//Postman test için örnek CSRF token : NPnc1fXBMJz3QNfaXvdb3lszfWHOdjNuZfeiILij
+
